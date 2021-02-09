@@ -35,20 +35,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - DidUpdateLocations Delegete Method
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
+        
+        // User Location
+        if let locationUser = locations.first {
             manager.stopUpdatingLocation()
             
-            render(location)
+            renderUser(locationUser)
         }
+        
+        // Rider Location
+        renderRider()
+        
     }
     
     // Render function that will zoom the map and add a pin
-    func render(_ location: CLLocation) {
+    func renderUser(_ location: CLLocation) {
         
         // Creatin a coordinate and span properties, that will pass to the region
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1 )
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         
         let region = MKCoordinateRegion(center: coordinate, span: span)
         
@@ -56,10 +62,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         
         // Adding the pin on the map
-        let pin = MKPointAnnotation()
-        pin.coordinate = coordinate
-        mapView.addAnnotation(pin)
+        let pinUser = UserAnnotation(title: "User", subtitle: "", coordinate: coordinate)
+        mapView.addAnnotation(pinUser)
     }
 
+    func renderRider() {
+        
+        let latitudeRider: CLLocationDegrees = 52.4731394
+        let longitureRider: CLLocationDegrees = 13.4375338
+        
+        let locationRider: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitudeRider, longitureRider)
+        
+        let pinRider = RiderAnnotation(title: "Rider", subtitle: "", coordinate: locationRider)
+        mapView.addAnnotation(pinRider)
+    }
 }
 
