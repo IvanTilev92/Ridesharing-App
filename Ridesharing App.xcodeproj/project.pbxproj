@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB81375D972477CA95D5EC32 /* Pods_Ridesharing_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EB3AAA984563252EDC76FC /* Pods_Ridesharing_App.framework */; };
 		FA2FEC7925D1BD0400BF5AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2FEC7825D1BD0400BF5AE2 /* AppDelegate.swift */; };
 		FA2FEC7B25D1BD0400BF5AE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2FEC7A25D1BD0400BF5AE2 /* SceneDelegate.swift */; };
 		FA2FEC7D25D1BD0400BF5AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2FEC7C25D1BD0400BF5AE2 /* ViewController.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41152B8669FBF8BCB07C5FCC /* Pods-Ridesharing App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ridesharing App.debug.xcconfig"; path = "Target Support Files/Pods-Ridesharing App/Pods-Ridesharing App.debug.xcconfig"; sourceTree = "<group>"; };
+		C8EB3AAA984563252EDC76FC /* Pods_Ridesharing_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ridesharing_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5130770A140F2E1C0D8B03 /* Pods-Ridesharing App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ridesharing App.release.xcconfig"; path = "Target Support Files/Pods-Ridesharing App/Pods-Ridesharing App.release.xcconfig"; sourceTree = "<group>"; };
 		FA2FEC7525D1BD0400BF5AE2 /* Ridesharing App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ridesharing App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2FEC7825D1BD0400BF5AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2FEC7A25D1BD0400BF5AE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB81375D972477CA95D5EC32 /* Pods_Ridesharing_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		936518CADEC1DDDF80D3D50D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8EB3AAA984563252EDC76FC /* Pods_Ridesharing_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F90EBB73E54C721035EAA5E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41152B8669FBF8BCB07C5FCC /* Pods-Ridesharing App.debug.xcconfig */,
+				CE5130770A140F2E1C0D8B03 /* Pods-Ridesharing App.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA2FEC6C25D1BD0300BF5AE2 = {
 			isa = PBXGroup;
 			children = (
 				FA2FEC7725D1BD0400BF5AE2 /* Ridesharing App */,
 				FA2FEC7625D1BD0400BF5AE2 /* Products */,
+				F90EBB73E54C721035EAA5E6 /* Pods */,
+				936518CADEC1DDDF80D3D50D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2FEC8925D1BD0600BF5AE2 /* Build configuration list for PBXNativeTarget "Ridesharing App" */;
 			buildPhases = (
+				339F8FF6667AF45EC7EC5E63 /* [CP] Check Pods Manifest.lock */,
 				FA2FEC7125D1BD0300BF5AE2 /* Sources */,
 				FA2FEC7225D1BD0300BF5AE2 /* Frameworks */,
 				FA2FEC7325D1BD0300BF5AE2 /* Resources */,
+				18382CF9707ECC0185E04F82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18382CF9707ECC0185E04F82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ridesharing App/Pods-Ridesharing App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ridesharing App/Pods-Ridesharing App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ridesharing App/Pods-Ridesharing App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		339F8FF6667AF45EC7EC5E63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ridesharing App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA2FEC7125D1BD0300BF5AE2 /* Sources */ = {
@@ -291,6 +360,7 @@
 		};
 		FA2FEC8A25D1BD0600BF5AE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41152B8669FBF8BCB07C5FCC /* Pods-Ridesharing App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +381,7 @@
 		};
 		FA2FEC8B25D1BD0600BF5AE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5130770A140F2E1C0D8B03 /* Pods-Ridesharing App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

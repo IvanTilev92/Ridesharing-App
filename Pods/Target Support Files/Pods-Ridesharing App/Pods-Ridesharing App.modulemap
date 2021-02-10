@@ -1,0 +1,6 @@
+framework module Pods_Ridesharing_App {
+  umbrella header "Pods-Ridesharing App-umbrella.h"
+
+  export *
+  module * { export * }
+}
