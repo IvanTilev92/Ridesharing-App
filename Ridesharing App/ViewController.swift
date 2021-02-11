@@ -8,18 +8,24 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Starscream
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, WebSocketDelegate {
     
     // MapView outlet
     @IBOutlet var mapView: MKMapView!
+    
+    let socket = WebSocket(request: URLRequest(url: URL(string: "wss://d2d-frontend-code-challenge.herokuapp.com")!))
     
     // Location Manager
     let manager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Setting up and connection to the WebSocket
+        socket.delegate = self
+        socket.connect()
+        
     }
 
     // Will set the location manager, the accuracy and will ask for permition.
@@ -30,6 +36,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+    }
+    
+    //MARK: Event Handeling for the socket
+    
+    
+    //MARK: - Setting up the Delegate
+    func didReceive(event: WebSocketEvent, client: WebSocket) {
+      switch event {
+      case .connected(let headers):
+        print("connected \(headers)")
+      case .disconnected(let reason, let closeCode):
+        print("disconnected \(reason) \(closeCode)")
+      case .text(let text):
+        print("received text: \(text)")
+      case .binary(let data):
+        print("received data: \(data)")
+      case .pong(let pongData):
+        print("received pong: \(pongData)")
+      case .ping(let pingData):
+        print("received ping: \(pingData)")
+      case .error(let error):
+        print("error \(error)")
+      case .viabilityChanged:
+        print("viabilityChanged")
+      case .reconnectSuggested:
+        print("reconnectSuggested")
+      case .cancelled:
+        print("cancelled")
+      }
     }
     
     
