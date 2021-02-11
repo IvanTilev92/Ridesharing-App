@@ -19,6 +19,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WebSocketDele
     
     // Location Manager
     let manager = CLLocationManager()
+    
+    var StringDataEvent = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +50,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WebSocketDele
         print("connected \(headers)")
       case .disconnected(let reason, let closeCode):
         print("disconnected \(reason) \(closeCode)")
+        // Reciving the events
       case .text(let text):
         print("received text: \(text)")
+        StringDataEvent = text
       case .binary(let data):
         print("received data: \(data)")
       case .pong(let pongData):

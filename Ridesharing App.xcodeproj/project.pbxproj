@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		FA2FEC8025D1BD0400BF5AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2FEC7E25D1BD0400BF5AE2 /* Main.storyboard */; };
 		FA2FEC8225D1BD0600BF5AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2FEC8125D1BD0600BF5AE2 /* Assets.xcassets */; };
 		FA2FEC8525D1BD0600BF5AE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2FEC8325D1BD0600BF5AE2 /* LaunchScreen.storyboard */; };
+		FA38EAF025D56553000CD85C /* FareEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38EAEF25D56553000CD85C /* FareEvent.swift */; };
 		FA7AA98B25D3117D00870323 /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AA98A25D3117D00870323 /* UserAnnotation.swift */; };
 		FA7AA98E25D3122800870323 /* RiderAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AA98D25D3122800870323 /* RiderAnnotation.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		FA2FEC8125D1BD0600BF5AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA2FEC8425D1BD0600BF5AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2FEC8625D1BD0600BF5AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA38EAEF25D56553000CD85C /* FareEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareEvent.swift; sourceTree = "<group>"; };
 		FA7AA98A25D3117D00870323 /* UserAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
 		FA7AA98D25D3122800870323 /* RiderAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +62,6 @@
 				41152B8669FBF8BCB07C5FCC /* Pods-Ridesharing App.debug.xcconfig */,
 				CE5130770A140F2E1C0D8B03 /* Pods-Ridesharing App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -89,6 +90,7 @@
 				FA2FEC7A25D1BD0400BF5AE2 /* SceneDelegate.swift */,
 				FA7AA98A25D3117D00870323 /* UserAnnotation.swift */,
 				FA7AA98D25D3122800870323 /* RiderAnnotation.swift */,
+				FA38EAEF25D56553000CD85C /* FareEvent.swift */,
 				FA2FEC7C25D1BD0400BF5AE2 /* ViewController.swift */,
 				FA2FEC7E25D1BD0400BF5AE2 /* Main.storyboard */,
 				FA2FEC8125D1BD0600BF5AE2 /* Assets.xcassets */,
@@ -212,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA38EAF025D56553000CD85C /* FareEvent.swift in Sources */,
 				FA7AA98E25D3122800870323 /* RiderAnnotation.swift in Sources */,
 				FA2FEC7D25D1BD0400BF5AE2 /* ViewController.swift in Sources */,
 				FA7AA98B25D3117D00870323 /* UserAnnotation.swift in Sources */,
