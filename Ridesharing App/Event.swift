@@ -7,19 +7,20 @@
 
 import Foundation
 
-// MARK: - Event
+// Event
 struct Event: Codable {
     let event: String
     let rideInfo: RideInfo
 }
 
+// Ride Info
 class RideInfo: Codable {
     let status: String
     let vehicleLocation, pickupLocation, dropoffLocation: Location
     let intermediateStopLocations: [Location]
 }
 
-// MARK: - Location
+// Location
 struct Location: Codable {
     let address: String?
     let lng, lat: Double
